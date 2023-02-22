@@ -48,12 +48,13 @@ class GildedRose {
                     if (item.quality < MAXIMUM_QUALITY) {
                         item.quality = item.quality + 1;
                     }
-                } else if (item.quality > 0) {
+                } else {
                     item.quality = item.quality - 1;
                 }
             }
 
             item.quality = Math.min(item.quality, MAXIMUM_QUALITY);
+            item.quality = Math.max(item.quality, 0);
         }
     }
 }

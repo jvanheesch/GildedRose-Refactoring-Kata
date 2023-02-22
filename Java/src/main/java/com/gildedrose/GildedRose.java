@@ -13,7 +13,7 @@ class GildedRose {
         this.items = items;
     }
 
-    public void updateQuality() {
+    public void updateQualityAndSellIn() {
         for (Item item : items) {
             if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
                 continue;

@@ -21,11 +21,6 @@ class GildedRose {
 
             item.sellIn = item.sellIn - 1;
 
-            if (item.sellIn < 0 && item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                item.quality = 0;
-                continue;
-            }
-
             int qualityDecrease = getQualityDecrease(item);
 
             if (item.sellIn < 0) {
@@ -45,6 +40,9 @@ class GildedRose {
                 return -1;
             case BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT:
                 int sellIn = item.sellIn;
+                if (sellIn < 0) {
+                    return item.quality;
+                }
                 if (sellIn < 5) {
                     return -3;
                 }

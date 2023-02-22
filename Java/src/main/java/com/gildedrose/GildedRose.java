@@ -28,17 +28,15 @@ class GildedRose {
 
             if (item.name.equals(AGED_BRIE)
                 || item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                if (item.quality < MAXIMUM_QUALITY) {
-                    item.quality = item.quality + 1;
+                item.quality = item.quality + 1;
 
-                    if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-                        if (item.sellIn < 10 && item.quality < MAXIMUM_QUALITY) {
-                            item.quality = item.quality + 1;
-                        }
+                if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
+                    if (item.sellIn < 10) {
+                        item.quality = item.quality + 1;
+                    }
 
-                        if (item.sellIn < 5 && item.quality < MAXIMUM_QUALITY) {
-                            item.quality = item.quality + 1;
-                        }
+                    if (item.sellIn < 5) {
+                        item.quality = item.quality + 1;
                     }
                 }
             } else if (item.quality > 0) {
@@ -54,6 +52,8 @@ class GildedRose {
                     item.quality = item.quality - 1;
                 }
             }
+
+            item.quality = Math.min(item.quality, MAXIMUM_QUALITY);
         }
     }
 }

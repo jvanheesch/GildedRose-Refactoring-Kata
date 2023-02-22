@@ -31,4 +31,12 @@ interpreter:java
 #executable:${TEXTTEST_HOME}/TypeScript/test/golden-master-text-test.js
 #interpreter:node
 
+# https://www.texttest.org/how_to_guides/batch_mode.html
 filename_convention_scheme:standard
+[batch_result_repository]
+ci:${TEXTTEST_HOME}/Java/texttest-docker/ci_results
+[end]
+
+[historical_report_location]
+ci:${TEXTTEST_HOME}/Java/texttest-docker/ci_reports
+[end]

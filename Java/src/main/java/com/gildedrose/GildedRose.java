@@ -52,14 +52,14 @@ class GildedRose {
                         item.quality = item.quality + 1;
                     }
                 } else {
-                    if (!item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
+                    if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
+                        item.quality = 0;
+                    } else {
                         if (item.quality > 0) {
                             if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
                                 item.quality = item.quality - 1;
                             }
                         }
-                    } else {
-                        item.quality = 0;
                     }
                 }
             }

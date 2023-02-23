@@ -51,6 +51,8 @@ class GildedRose {
                 }
                 return -1;
             default:
+                // TODO: consider extracting 1 as a constant
+                // return item.name.startsWith("CONJURED") ? 2 : 1;
                 return 1;
         }
     }

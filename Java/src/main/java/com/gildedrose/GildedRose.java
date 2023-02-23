@@ -31,10 +31,8 @@ class GildedRose {
                     }
                 }
             } else {
-                if (item.quality > 0) {
-                    if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                        item.quality = item.quality - 1;
-                    }
+                if (item.quality > 0 && !item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+                    item.quality = item.quality - 1;
                 }
             }
 
